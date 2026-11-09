@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 96%;   /* #F8F5EF - Pearl Ivory */
+    --foreground: 220 54% 14%;  /* #101C35 - Royal Navy */
+
+    --card: 0 0% 100%;          /* #FFFFFF - Warm White */
+    --card-foreground: 220 54% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 54% 14%;
+
+    --primary: 38 46% 60%;      /* #C5A46D - Champagne Gold */
+    --primary-foreground: 220 54% 14%;
+
+    --secondary: 220 44% 25%;   /* #24385E - Deep Indigo */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 28% 93%;
+    --muted-foreground: 220 20% 45%;
+
+    --accent: 38 48% 94%;
+    --accent-foreground: 38 46% 50%;
+
+    --destructive: 0 40% 66%;   /* #C98787 - Dusty Rose */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 141 17% 56%;     /* #7FA18B - Sage Green */
+    --warning: 38 60% 55%;      /* #DCC49B - Muted Gold */
+    --danger: 0 40% 66%;        /* #C98787 - Dusty Rose */
+
+    --border: 37 36% 87%;       /* #E9DFD0 - Warm Border */
+    --input: 37 36% 87%;
+    --ring: 38 46% 60%;
+
+    --radius: 1.25rem; /* 20px */
+  }
+
+  .dark {
+    /* Maintained in light aesthetic with rich contrasts */
+    --background: 42 33% 96%;
+    --foreground: 220 54% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 54% 14%;
+    --border: 37 36% 87%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#F8F5EF] text-[#101C35] antialiased font-sans selection:bg-[#C5A46D]/25 selection:text-[#101C35];
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 164, 109, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 164, 109, 0.6);
+}
+
+/* Royal Luxury Architectural Utilities */
+.royal-card {
+  background: #FFFFFF;
+  border: 1px solid #E9DFD0;
+  box-shadow: 0 4px 20px -2px rgba(16, 28, 53, 0.05);
+}
+
+.royal-card-ivory {
+  background: #FAF7F2;
+  border: 1px solid #E9DFD0;
+}
+
+.royal-gold-trim {
+  border-color: #C5A46D;
+}
+
+.royal-navy-card {
+  background: #101C35;
+  border: 1px solid rgba(197, 164, 109, 0.25);
+  box-shadow: 0 8px 30px -4px rgba(16, 28, 53, 0.25);
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
